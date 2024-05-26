@@ -14,7 +14,8 @@
       line-height: 1.2;
 
     }
-    h2{
+
+    h2 {
       font-size: 16px;
       font-family: "Poppins", sans-serif;
       font-weight: 600;
@@ -22,18 +23,19 @@
       margin-bottom: 20px;
     }
 
-    h5{
-      font-size: 15px;
-      font-family: "Poppins", sans-serif;
-      font-weight: 600;
+    h5 {
+      font-size: 13px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
       line-height: 1.2;
-      margin-bottom: 10px;
+      margin-bottom: 3px;
     }
+
     [class*="col-"] img {
-      max-width: 100%; 
+      max-width: 100%;
       max-height: 100%;
       margin-bottom: 20px;
-      margin-top: 13px;
+      margin-top: 0px;
       border-radius: 12px;
       height: 200px;
       box-shadow: rgba(50, 50, 93, 0.15) 0px 13px 27px -5px, rgba(0, 0, 0, 0.2) 0px 8px 16px -8px;
@@ -42,11 +44,13 @@
     [class*="col-"] {
       padding: 0px;
       /* box-shadow: rgba(50, 50, 93, 0.15) 0px 13px 27px -5px, rgba(0, 0, 0, 0.2) 0px 8px 16px -8px;*/
-      border-radius: 12px; 
+      border-radius: 12px;
+      margin-top: 30px;
     }
 
     [class*="col-lg"] {
       margin: 10px;
+      margin-top: 40px;
       height: 400px;
       min-width: 300px;
       border-radius: 12px;
@@ -54,6 +58,7 @@
 
     [class*="col-md"] {
       margin: 9px;
+      margin-top: 40px;
       height: 400px;
       min-width: 260px;
       border-radius: 12px;
@@ -61,6 +66,7 @@
 
     [class*="col-sm"] {
       margin: 20px;
+      margin-top: 40px;
       height: 400px;
       min-width: 300px;
       text-align: left;
@@ -72,20 +78,25 @@
       margin: 18px;
       height: 350px;
       max-width: 650px;
-      min-width: 290px;
+      min-width: 300px;
       text-align: center;
       border-radius: 12px;
     }
-    .inline-break {
-  display: block;
-  height: 0px; /* Optional: Hides the empty element */
-  margin: 0; /* Optional: Removes margins */
-  padding: 0; /* Optional: Removes padding */
-}
 
-    @media (min-width: 768px) and (max-width: 991px) {
+    .inline-break {
+      display: block;
+      height: 0px;
+      /* Optional: Hides the empty element */
+      margin: 0;
+      /* Optional: Removes margins */
+      padding: 0;
+      /* Optional: Removes padding */
+    }
+
+    @media (min-width: 768px) and (max-width: 960px) {
       .boys {
         height: 200px;
+
       }
 
       .boy {
@@ -103,25 +114,49 @@
   </div>
   <div class="container box">
     <div class="col align-self-end" style="height: 30%; ">
-      <div class="row justify-content-center " style="width:105%; ">
-        <div class="boy col-lg-10 col-md-12 col-sm-12" id=" nig" style="background-image: url('liit.jpg'); background-size: cover;">Col 1</div>
-        <div class=" boys col-lg-2 col-md-12 col-sm-12" id=" nig1"></div>
-        
+      <div class="row justify-content-center " style="width:100%; ">
+        <div class="boy col-lg-10 col-md-12 col-sm-12" id="nig"
+          style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('liit.jpg'); background-size:cover; text-align:  left; padding: 30px;">
+
+          <h2 style="margin-top:30%; margin-bottom:6px; color: azure; font-size: 25px;"> Blazers earn another decisive
+            victory at the expense of Golden Stags</h2>
+          <hr class="opacity-50 mb-2" style="color:azure;">
+          <p style="color:azure; font-size: 17px;">The #BenildeBlazers cruised past the San Sebastian College-Recoletos
+            (SSC-R) Golden Stags to earn
+            back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+
+        </div>
+
+        <div class="boys col-lg-2 col-md-12 col-sm-12" id="nig"
+          style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('liit.jpg'); background-size:cover; text-align:  left; padding: 24px;">
+
+          <h2 style="margin-top:40%; margin-bottom:6px; color: azure; font-size: 20px;"> Blazers earn another decisive
+            victory at the expense of Golden Stags</h2>
+          <hr class="opacity-50 mb-2" style="color:azure;">
+          <p style="color:azure; font-size: 17px;">The #BenildeBlazers cruised past the San Sebastian College-Recoletos
+            (SSC-R) Golden Stags to earn
+            back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+
+        </div>
+
       </div>
     </div>
     <div class="col align-self-center  " style="height: 80%; ">
-      <div class="row justify-content-center " style="width:105%; ">
-        <h5 class="" style="margin-left: 15%;">Latest Stories</h5>
-        
+      <div class="row justify-content-center " style="width:100%; ">
+        <h5 style = "margin-left: auto; margin-right: auto; text-align: center;">Latest Stories <hr class="opinion-line" style="display: inline-block; color: rgb(189, 189, 189); width: 80%; opacity: 3; margin-left: 10px; vertical-align: middle;"></h5>
 
-        <div class="col-lg-3 col-md-3 col-sm-12"  ><h5> Opinion</h5>
+        
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <h5 style = "margin: 0px;">Opinion <hr class="opinion-line" style="display: inline-block; color: rgb(83, 83, 83); width: 75%; opacity: 30; margin-left: 10px; vertical-align: middle;"></h5>
+
           <img src="liit.jpg">
           <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
           <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
             back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
-</div>
+        </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
-          <h5> Opinion</h5>
+          <h5>Opinion <hr class="opinion-line" style="display: inline-block; color: black; width: 75%; opacity: 30; margin-left: 10px; vertical-align: middle;"></h5>
+
           <img src="liit.jpg">
           <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
           <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
@@ -129,7 +164,9 @@
 
         </div>
         <div class="col-lg-3 col-md-3 col-sm-12">
-          <h5> Opinion</h5>
+          <h5> Opinion
+            <hr class="opacity-50 " style="color:rgb(0, 0, 0);">
+          </h5>
           <img src="liit.jpg">
           <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
           <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
@@ -144,19 +181,29 @@
           <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
             back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-12"><h5> Opinion</h5>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <h5> Opinion</h5>
           <img src="liit.jpg">
           <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
           <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
-            back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p></div>
-        <div class="col-lg-3 col-md-3 col-sm-12"><h5> Opinion</h5>
+            back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <h5> Opinion</h5>
           <img src="liit.jpg">
           <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
           <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
-            back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p></div>
+            back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+        </div>
 
       </div>
     </div>
+  </div>
+
+  <div class="header" style="background-color: rgb(58, 0, 0); padding: 40px; padding-left: 60px;">
+    <h1 class="col justify-content-center align-items-start"
+      style="font-size: 30px; font-family: 'Times New Roman', Times, serif;"><img src="logo_no_name.png"
+        style="max-width: 100px"> The Searcher </h1>
   </div>
   </div>
   </div>
