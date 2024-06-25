@@ -13,7 +13,23 @@
       margin: 0;
       padding: 0;
     }
+    nav img {
 
+height: auto;
+margin: 0px;
+}
+
+nav {
+background-color: rgb(255, 255, 255);
+color: #000;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nav-link {
+font-size: 1.2em;
+margin-right: 10px;
+color: #000;
+}
     header {
       background-color: rgb(255, 255, 255);
       color: #000;
@@ -86,20 +102,40 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="col justify-content-center align-items-start"
-      style="font-size: 30px; font-family: 'Times New Roman', Times, serif;"><img src="logo_no_name.png"
-        style="max-width: 100px"> The Searcher </h1>
+  <nav class="navbar navbar-expand-sm bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <h1 class="col justify-content-center align-items-start"
+                style="font-size: 30px; font-family: 'Times New Roman', Times, serif; margin-bottom: 0px;"><img
+                    src="logo_no_name_Fotor.png" style="max-width: 100px"> The Searcher </h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbacde r-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb- mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Opinion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Literary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
 
-    <nav>
-      <a href="#">News</a>
-      <a href="#">Opinion</a>
-      <a href="#">Literary</a>
-      <a href="#">Sports</a>
-      <a href="#">About Us</a>
-      <span class="search"></span>
-    </nav>
-  </header>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
   <main>
     <section class="artimg" id="art-img"><img src="article.jpeg" alt="Article:Image of many students" height="200">
     </section>

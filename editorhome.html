@@ -58,11 +58,20 @@
       text-align: center;
     } 
 
-    [class*="col-md"] {
+    /* [class*="col-md"] {
       margin: 9px;
       margin-top: 40px;
       height: 400px;
       min-width: 260px;
+      border-radius: 12px;
+      text-align: left;
+    } */
+
+    [class*="col-md"] {
+      margin: 10px;
+      margin-top: 30px;
+      height: 400px;
+      min-width: 300px;
       border-radius: 12px;
       text-align: left;
     }
@@ -102,8 +111,8 @@
       margin-right: 0;
     }
 
-    .boy,
-    .boys {
+    .recent,
+    .banchange {
       margin: 20px;
       height: 350px;
       max-width: 680px;
@@ -113,23 +122,7 @@
     }
 
     
-
-    @media (min-width: 768px) and (max-width: 993px) {
-      .boys {
-        height: 200px;
-        display: flex;
-      align-items: center;
-      }
-      .boys h2{
-        font-size: 20px;
-      }
-
-      .boy {
-        height: 400px;
-
-      }
-    }
-    @media (max-width: 576px) {
+    @media (max-width: 876px) {
      
     [class*="col-sm"] {
       margin: 40px;
@@ -139,8 +132,20 @@
       max-width: 70%;
       text-align: center;
     } 
+  }
+    @media (max-width: 1376px) {
+     
+     [class*="col-md"] {
+      margin: 10px;
+      margin-top: 30px;
+      height: 400px;
+      min-width: 300px;
+      border-radius: 12px;
+      text-align: left;
       
     }
+  }
+  
   </style>
 </head>
 
@@ -162,18 +167,30 @@
   </header>
 
 
-   <h1 style = "text-align: center; margin: 40px; font-size: 30px;">Good Morning, Mark</h1>
+  <h1 style = "text-align: center; margin: 40px; font-size: 30px;">Good Morning, UserName</h1>
+
   <div class="container box">
     <div class="col align-self-end" style="height: 30%; ">
       <div class="row justify-content-center " style="width:100%; ">
-        <div class="boy col-lg-5 col-md-12 col-sm-12" id="nig"
+
+        <div class="recent col-lg-5 col-md-5 col-sm-12" 
           style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('liit.jpg'); background-size:cover; text-align:  left; padding: 30px;">
-            <div>Background </div>
+            <div>
+              <div><h6>Recent</h6></div>
+              <!-- Recent Articles Here -->
+
+              <div class = "Recent Articles">
+                <img src = "liit.jpg">
+                <h> Header of Article here</h>
+                <p>body of article</p>
+              </div>
+
+            </div>
 
         </div>
 
-        <div class="boys col-lg-5 col-md-12 col-sm-12" id="nig"
-          style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('liit.jpg'); background-size:cover; text-align:  left; padding: 24px;">
+        <div class="banchange col-lg-6 col-md-5 col-sm-12" 
+          style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('liit.jpg'); background-size:cover; text-align:  left; padding: 30px;">
           <div> </div>
         </div>
 
