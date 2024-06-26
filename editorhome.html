@@ -44,7 +44,7 @@
       margin-bottom: 20px;
       margin-top: 0px;
       border-radius: 12px;
-      height: 200px;
+      height: 80px;
       box-shadow: rgba(50, 50, 93, 0.15) 0px 13px 27px -5px, rgba(0, 0, 0, 0.2) 0px 8px 16px -8px;
     }
 
@@ -85,31 +85,23 @@
     }
 
     
-    header {
-      background-color: white;
-      color: #000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 5px;
-      padding-right: 30px;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      height: 70px;
-      width: 100%;
+    nav img {
 
-    }
-    header a {
-      color: #000000;
-      text-decoration: none;
-      margin-right: 1rem;
-    }
-	header nav a {
-      font-size: 1.1em;
-      margin-right: 20px;
-	 }
-    header nav a:last-child {
-      margin-right: 0;
-    }
+height: auto;
+margin: 0px;
+}
+
+nav {
+background-color: rgb(255, 255, 255);
+color: #000;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nav-link {
+font-size: 1.2em;
+margin-right: 10px;
+color: #000;
+}
 
     .recent,
     .banchange {
@@ -151,30 +143,50 @@
 
 <body>
 
-  <header>
-    <h1 class="col justify-content-center align-items-start"
-      style="font-size: 25px; font-family: 'Times New Roman', Times, serif;"><img src="logo_no_name.png"
-        style="max-width: 60px"> Editor's Portal</h1>
-    
-    <nav>
-      <a href="#">News</a>
-      <a href="#">Opinion</a>
-      <a href="#">Literary</a>
-      <a href="#">Sports</a>
-      <a href="#">Menue</a>
-	  <span class="search"></span>
-    </nav>
-  </header>
+  <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <h1 class="col justify-content-center align-items-start"
+                style="font-size: 30px; font-family: 'Times New Roman', Times, serif; margin-bottom: 0px;"><img
+                    src="logo_no_name_Fotor.png" style="max-width: 100px"> The Searcher </h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbacde r-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb- mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Opinion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Literary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
   <h1 style = "text-align: center; margin: 40px; font-size: 30px;">Good Morning, UserName</h1>
 
   <div class="container box">
     <div class="col align-self-end" style="height: 30%; ">
-      <div class="row justify-content-center " style="width:100%; ">
+      <div class="row justify-content-center " style="width:110%; ">
 
         <div class="recent col-lg-5 col-md-5 col-sm-12" 
-          style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('liit.jpg'); background-size:cover; text-align:  left; padding: 30px;">
+          style=" background-size:cover; text-align:  left; padding: 30px;">
             <div>
               <div><h6>Recent</h6></div>
               <!-- Recent Articles Here -->
@@ -189,7 +201,7 @@
 
         </div>
 
-        <div class="banchange col-lg-6 col-md-5 col-sm-12" 
+        <div class="banchange col-lg-5 col-md-5 col-sm-12" 
           style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('liit.jpg'); background-size:cover; text-align:  left; padding: 30px;">
           <div> </div>
         </div>

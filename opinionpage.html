@@ -38,8 +38,8 @@
     }
 
     .articles img {
-      max-width: 2000px;
-      max-height: 200px;
+      width: 210px;
+      height: 180px;
       margin-bottom: 20px;
       margin-top: 0px;
       border-radius: 12px;
@@ -52,21 +52,22 @@
 
     nav img {
 
-height: auto;
-margin: 0px;
-}
+      height: auto;
+      margin: 0px;
+    }
 
-nav {
-background-color: rgb(255, 255, 255);
-color: #000;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+    nav {
+      background-color: rgb(255, 255, 255);
+      color: #000;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
 
-.nav-link {
-font-size: 1.2em;
-margin-right: 10px;
-color: #000;
-}
+    .nav-link {
+      font-size: 1.2em;
+      margin-right: 10px;
+      color: #000;
+    }
+
     .articles {
       padding: 0px;
       margin: 10px;
@@ -135,8 +136,8 @@ color: #000;
     }
 
     .boy h3 {
-      margin-top: 20%;
-      ;
+      margin-top: 25%;
+      
     }
 
     .boys h3 {
@@ -174,7 +175,7 @@ color: #000;
         padding: 0px;
         margin: 10px;
         margin-top: 10px;
-        height: 250px;
+        height: 230px;
         min-width: 450px;
         max-width: 800px;
         border-radius: 12px;
@@ -196,8 +197,26 @@ color: #000;
       color: rgb(0, 0, 0);
       opacity: 3;
     }
-   
-    @media (min-width: 500px) and (max-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1500px) {
+      .articles {
+        margin-left: 10%;
+        padding: 0px;
+        margin: 10px;
+        margin-top: 10px;
+        height: 230px;
+        min-width: 450px;
+        max-width: 800px;
+        border-radius: 12px;
+
+      }
+      .articles img {
+        margin-top: 10px;
+        width: 280px;
+        height: 210px;
+
+    }
+  }
+    @media (min-width: 600px) and (max-width: 1200px) {
       .boys {
         height: 150px;
         width: inherit;
@@ -205,12 +224,18 @@ color: #000;
         align-items: center;
       }
 
+      .articles img {
+        margin-top: 10px;
+        width: 270px;
+    height: 200px;
+      }
+
       .boys h3 {
         margin-top: 0px;
       }
 
       .boy {
-        height: 300px;
+        height: 350px;
       }
 
       hr {
@@ -219,7 +244,7 @@ color: #000;
         /* Remove default line height */
         border-top: 1px solid #ddd;
         /* Set your desired border style */
-        margin-bottom: 5px;
+        margin-bottom: 12px;
         /* Add some margin for spacing */
         padding: 0;
         /* Remove default padding */
@@ -228,15 +253,31 @@ color: #000;
         opacity: 3;
       }
 
+      .articles {
+        margin-left: 6%;
+        padding: 0px;
+        margin: 10px;
+        margin-top: 20px;
+        height: 220px;
+        min-width: 450px;
+        max-width: 800px;
+        border-radius: 12px;
+
+      }
     }
-    
+
 
     @media (min-width: 992px) and (max-width: 1200px) {
       .articles {
         margin-left: 12%;
-        height: 250px;
+        height: 280px;
         min-width: 450px;
         max-width: 650px;
+        margin-top: 10px;
+      }
+
+      .articles img {
+        margin-top: 10px;
       }
 
       hr {
@@ -245,7 +286,7 @@ color: #000;
         /* Remove default line height */
         border-top: 1px solid #ddd;
         /* Set your desired border style */
-        margin-bottom: 5px;
+        margin-bottom: 15px;
         /* Add some margin for spacing */
         padding: 0;
         /* Remove default padding */
@@ -255,7 +296,61 @@ color: #000;
       }
     }
 
-    
+    @media (max-width: 560px) {
+      .content {
+        display: flex;
+        flex-direction: column;
+        /* Stack elements vertically */
+        align-items: center;
+        /* Center elements horizontally */
+        text-align: center;
+        /* Center text */
+        margin-bottom: 20px;
+        /* Space between image and text */
+
+      }
+
+      .articles {
+        height: 330px;
+        min-width: 450px;
+        max-width: 650px;
+      }
+
+      .opinion-line {
+        margin-bottom: 100px;
+      }
+
+      .articles img {
+        width: 280px;
+        height: 200px;
+        
+        margin-bottom: 20px;
+        /* Space between image and text */
+        border-radius: 12px;
+      }
+
+      .articles hr {
+        width: calc(80% - 150px);
+        height: 0;
+        /* Remove default line height */
+        border-top: 1px solid #ddd;
+        /* Set your desired border style */
+        margin-bottom: 7px;
+        /* Add some margin for spacing */
+        padding: 0;
+        /* Remove default padding */
+        display: inline-block;
+        color: rgb(0, 0, 0);
+        opacity: 3;
+      }
+
+      .boys {
+        height: 150px;
+        width: inherit;
+        display: inline-block;
+        align-items: center
+      }
+    }
   </style>
 </head>
 
@@ -263,59 +358,54 @@ color: #000;
 
   <nav class="navbar navbar-expand-md bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <h1 class="col justify-content-center align-items-start"
-                style="font-size: 30px; font-family: 'Times New Roman', Times, serif; margin-bottom: 0px;"><img
-                    src="logo_no_name_Fotor.png" style="max-width: 100px"> The Searcher </h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbacde r-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb- mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">News</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Opinion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Literary</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sports</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+      <a class="navbar-brand" href="#">
+        <h1 class="col justify-content-center align-items-start"
+          style="font-size: 30px; font-family: 'Times New Roman', Times, serif; margin-bottom: 0px;"><img
+            src="logo_no_name_Fotor.png" style="max-width: 100px"> The Searcher </h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbacde r-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb- mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Opinion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Literary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
 
-                </li>
-            </ul>
-        </div>
+          </li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
   <div class="container box">
 
     <div class="row justify-content-center " style="width:100%; padding: 0px;">
       <div class="boys col-lg-1 col-md-12 col-sm-12" id="nig" style=" text-align:  left; padding: 24px;">
 
-        <h3 style="margin-bottom:15px; color: rgb(0, 0, 0); font-size: 40px;"> Opinion Section </h2>
+        <h3 style="margin-bottom:15px; color: rgb(0, 0, 0); font-size: 30px;"> Opinion Section </h2>
 
           <p style="color:rgb(7, 7, 7); font-size: 17px;"> The voices of the campus journalist on relavant issues</p>
 
 
       </div>
       <div class="boy col-lg-11 col-md-12 col-sm-12"
-        style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('liit.jpg'); background-size:cover; text-align:  left; padding: 30px;">
-        <h5 style="font-family: Montserrat, sans-serif;">Section Banner Article</h3>
-          <h3 style=" margin-bottom:6px; color: azure; font-size: 25px;"> Blazers earn another decisive
-            victory at the expense of Golden Stags</h2>
-            <hr class="opacity-50 mb-2" style="color:azure;">
-            <p style="color:azure; font-size: 17px;">The #BenildeBlazers cruised past the San Sebastian
-              College-Recoletos
-              (SSC-R) Golden Stags to earn
-              back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+        style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('Asset\ -\ Cartoon\ Palestine.png'); background-size:cover; text-align:  left; padding: 30px;">
+        <h3 style="font-family: Montserrat, sans-serif;"></h3>
+        <h3 style=" margin-bottom:6px; color: azure; font-size: 25px;"> Kahingian ang Pagsuporta ng UP sa Kilusang Estudyanteng Nakikiisa sa mga Palestino</h3>
+        <hr class="opacity-50 mb-2" style="color:azure;">
+        <p style="color:azure; font-size: 17px;">Pagkat malaon nang sinasagot ng dahas ang pagkilos ng kabataan, kagyat na kahingian sa UP ang pagprotekta nito sa mga estudyante.</p>
 
       </div>
     </div>
@@ -331,36 +421,35 @@ color: #000;
 
         <div class="articles">
           <div class="content">
-            <img src="liit.jpg">
+            <img src="Asset - Hearth.jpeg">
             <div>
-              <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
-              <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
-                back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+              <h2> Pareho Rin Kaya ang Epekto Ko Sa Iyo?</h2>
+              <p>Sa liit ng komunidad na kinabibilangan natin, ikaw lang ang nagparamdam na mas higit pa pala ako sa mga kategoryang napapaloob sakin pagdating sa hulma ng pisikal na anyo ko.
+              </p>
             </div>
           </div>
         </div>
 
         <div class="articles">
           <hr class="opinion-line"
-            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; margin-bottom: -6px;">
+            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; ">
           <div class="content">
-            <img src="liit.jpg">
+            <img src="Asset - Pogo.jpeg">
             <div>
-              <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
-              <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
-                back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+              <h2>Ending the POGO Problem</h2>
+              <p>For POGOs and their corruption to be uprooted, the legal leg from which it stands must be severed before the industry leeches itself further on the economy and Philippine politics.</p>
             </div>
           </div>
         </div>
         <div class="articles">
           <hr class="opinion-line"
-            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; margin-bottom: -6px;">
+            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top;">
           <div class="content">
-            <img src="liit.jpg">
+            <img src="Asset - Supreme Court.jpeg">
             <div>
-              <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
-              <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
-                back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+              <h2> Judiciary Moves to Make Red-Taggers Liable, but That May Not Be Enough
+              </h2>
+              <p>Strides from the state to shield its citizens from red-tagging are welcome, but not without getting at their roots.</p>
             </div>
           </div>
         </div>
@@ -368,30 +457,28 @@ color: #000;
 
         <div class="articles">
           <hr class="opinion-line"
-            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; margin-bottom: -6px;">
+            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; ">
           <div class="content">
-            <img src="liit.jpg">
+            <img src="Asset - AcadValidation.jpeg">
             <div>
-              <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
-              <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
-                back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+              <h2> Academic Validation</h2>
+              <p>Would another sleepless night make me a better student than my peers? Or in the end, would it just be a measure of my willingness to sacrifice my personhood in favor of petty academic distinction?</p>
             </div>
           </div>
-      </div>
-      <div class="articles">
-        <hr class="opinion-line"
-          style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; margin-bottom: -6px;">
-        <div class="content">
-          <img src="liit.jpg">
-          <div>
-            <h2> Blazers earn another decisive victory at the expense of Golden Stags</h2>
-            <p>The #BenildeBlazers cruised past the San Sebastian College-Recoletos (SSC-R) Golden Stags to earn
-              back-to-back wins in the #17thFilOilEcoOilPreseasonCup.</p>
+        </div>
+        <div class="articles">
+          <hr class="opinion-line"
+            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; ">
+          <div class="content">
+            <img src="Aseet - Phones.jpeg">
+            <div>
+              <h2> So Much for Phone Conversations</h2>
+              <p>Mothers raise us to know sympathy and respect. Yet they are the first to be abandoned amid the widespread attacks against all life.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   </div>
