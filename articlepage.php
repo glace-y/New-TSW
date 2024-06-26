@@ -1,33 +1,51 @@
 <?php
-include 'connection.php'; 
+include 'connection.php'; // Include your database connection file
 
-$query = "SELECT a.headline, a.subhead, a.content_text, a.pub_date, c.category_name, m.media_filepath, CONCAT(e.editor_name, ' | ', DATE_FORMAT(a.pub_date, '%M %d, %Y')) AS author_date, ec.editor_name
-          FROM article AS a
-          INNER JOIN category AS c ON a.category_id = c.category_id
-          INNER JOIN article_media AS am ON a.article_id = am.article_id
-          INNER JOIN media AS m ON am.media_id = m.media_id
-          INNER JOIN article_author AS aa ON a.article_id = aa.article_id
-          INNER JOIN editors AS e ON aa.editor_id = e.editor_id
-          INNER JOIN media_creator AS mc ON m.media_id = mc.media_id
-          INNER JOIN editors AS ec ON mc.editor_id = ec.editor_id
-          WHERE a.article_id = 1";
+// Ensure article_id is provided and is a valid integer
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $article_id = $_GET['id'];
 
-$result = mysqli_query($con, $query);
+    // Query to fetch article details
+    $query = "SELECT a.headline, a.subhead, a.content_text, a.pub_date, c.category_name, m.media_filepath, CONCAT(e.editor_name, ' | ', DATE_FORMAT(a.pub_date, '%M %d, %Y')) AS author_date, ec.editor_name AS media_creator
+              FROM article AS a
+              INNER JOIN category AS c ON a.category_id = c.category_id
+              INNER JOIN article_media AS am ON a.article_id = am.article_id
+              INNER JOIN media AS m ON am.media_id = m.media_id
+              INNER JOIN article_author AS aa ON a.article_id = aa.article_id
+              INNER JOIN editors AS e ON aa.editor_id = e.editor_id
+              INNER JOIN media_creator AS mc ON m.media_id = mc.media_id
+              INNER JOIN editors AS ec ON mc.editor_id = ec.editor_id
+              WHERE a.article_id = ?
+              LIMIT 1";
 
-if (!$result) {
-    die("Query failed: " . mysqli_error($con));
+    // Prepare and bind parameter
+    $stmt = $con->prepare($query);
+    $stmt->bind_param("i", $article_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // Fetch article details
+        $row = $result->fetch_assoc();
+        $id = $article_id;
+        $headline = $row['headline'];
+        $subhead = $row['subhead'];
+        $content_text = $row['content_text'];
+        $pub_date = $row['pub_date'];
+        $category_name = $row['category_name'];
+        $media_filepath = $row['media_filepath'];
+        $author_date = $row['author_date'];
+        $media_creator = $row['media_creator'];
+    } else {
+        echo "No article found with ID: " . $article_id;
+        exit();
+    }
+
+    $stmt->close();
+} else {
+    echo "Invalid article ID.";
+    exit();
 }
-
-$row = mysqli_fetch_assoc($result);
-
-$headline = $row['headline'];
-$subhead = $row['subhead'];
-$content_text = $row['content_text'];
-$pub_date = $row['pub_date'];
-$category_name = $row['category_name'];
-$media_filepath = $row['media_filepath'];
-$author_date = $row['author_date'];
-$media_creator = $row['editor_name'];
 ?>
 
 <!DOCTYPE html>
@@ -60,16 +78,16 @@ $media_creator = $row['editor_name'];
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10">
-        <section class="artimg mb-4">
+          <section class="artimg mb-4">
             <img src="<?php echo $media_filepath ?>" alt="Article: Image of many students">
             <div>Photo by: <?php echo $media_creator ?></div>
-        </section>
-        <section class="article">
-          <div class="category"><?php echo $category_name ?></div>
-          <div class="headline"><?php echo $headline ?></div>
-          <div class="subhead"><?php echo $subhead ?></div>
-          <div class="author-date"><?php echo $author_date ?></div>
-        </section>
+          </section>
+          <section class="article">
+            <div class="category"><?php echo $category_name ?></div>
+            <div class="headline"><?php echo $headline ?></div>
+            <div class="subhead"><?php echo $subhead ?></div>
+            <div class="author-date"><?php echo $author_date ?></div>
+          </section>
           <div class="content">
             <?php echo $content_text ?>
           </div>
@@ -79,7 +97,7 @@ $media_creator = $row['editor_name'];
   </main>
   <footer class="footer py-3">
     <div class="container text-center">
-      &copy; 2023 The Searcher. All rights reserved.
+      &copy; <?php echo date("Y"); ?> The Searcher. All rights reserved.
     </div>
   </footer>
 </body>

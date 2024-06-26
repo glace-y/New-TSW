@@ -37,15 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($stmt->execute()) {
                 $article_id = $stmt->insert_id;
-
-                // Insert into article_media table
-                $sqlArticleMedia = "INSERT INTO article_media (article_id, media_id) VALUES (?, ?)";
-                $stmtArticleMedia = $con->prepare($sqlArticleMedia);
-                $stmtArticleMedia->bind_param("ii", $article_id, $media_id);
-                $stmtArticleMedia->execute();
-
-                echo '<meta http-equiv="refresh" content="2;url=homepage.html">';
-                echo '<p>Post successful! Redirecting...</p>';
+                // Redirect to article page with article_id
+                header("Location: articlepage.php?id=" . $article_id);
                 exit();
             } else {
                 echo "Error: " . $sql . "<br>" . $con->error;
