@@ -212,5 +212,5 @@ color: #000;
             document.querySelector('#content').value = quill.root.innerHTML;
         };
     </script>
-</body> 
+</body>
 </html>
