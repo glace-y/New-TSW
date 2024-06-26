@@ -1,3 +1,20 @@
+<?php
+include 'connection.php';
+
+// Fetch journalist options
+$query = "SELECT editor_id, editor_name FROM editors";
+$result = mysqli_query($con, $query);
+
+$journalists = [];
+if ($result) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $journalists[] = $row;
+    }
+} else {
+    die("Query failed: " . mysqli_error($con));
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -137,75 +154,63 @@ color: #000;
         </div>
     </div>
 </nav>
-  <div class="container container-main">
-   
-    <div class="row">
-      <div class="col-md-7">
-        <h5 style="margin: auto; text-align: left;">
-          <span class="badge text-bg-secondary">Article Content </span> </h5>
-        
-        <div class="form-group">
-          <label for="header">Header</label>
-          <input type="text" class="form-control" id="header" placeholder="Place Header Here">
+<form action="publish.php" method="POST" enctype="multipart/form-data">
+        <div class="container container-main">
+            <div class="row">
+                <div class="col-md-7">
+                    <h5 style="margin: auto; text-align: left;">
+                        <span class="badge text-bg-secondary">Article Content</span>
+                    </h5>
+                    <div class="form-group">
+                        <label for="header">Header</label>
+                        <input type="text" class="form-control" name="header" placeholder="Place Header Here" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subheader">Sub-header</label>
+                        <input type="text" class="form-control" name="subheader" placeholder="Place Sub-header Here" required>
+                    </div>
+                    <div id="editor"></div>
+                </div>
+                <div class="col-md-4 meta-data">
+                    <div class="form-group">
+                        <label for="tags">Tags</label>
+                        <input type="text" class="form-control" name="tags" placeholder="Campus News" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="journalists">Journalists</label>
+                        <select class="form-control" name="journalist" required>
+                            <option value="">Select Journalist</option>
+                            <?php foreach ($journalists as $journalist): ?>
+                                <option value="<?= htmlspecialchars($journalist['editor_id']) ?>"><?= htmlspecialchars($journalist['editor_name']) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bannerImage">Banner Image</label>
+                        <input type="file" class="form-control-file" name="bannerImage" required>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="setAsBannerArticle">
+                        <label class="form-check-label" for="setAsBannerArticle">Set as Banner Article?</label>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="header">Sub-header</label>
-          <input type="text" class="form-control" id="Sub-header" placeholder="Place Sub-header Here">
+        <input type="hidden" name="content" id="content">
+        <div class="btn-group">
+            <button class="btn btn-outline-primary" type="submit" name="save_draft">Save Draft</button>
+            <button class="btn btn-primary" type="submit" name="publish_now">Publish Now</button>
         </div>
-        
-        <!-- <div class="form-group">
-          <label for="body">Body</label>
-          <textarea class="form-control" id="body"
-            rows="10">Lorem ipsum dolor sit amet consectetur. Tortor vitae ultricies et tellus ultrices. Viverra mauris ultrices arcu tristique risus condimentum venenatis feugiat at. Nisl eu suscipit lorem nulla sed ullamcorper. Aliquam diam vitae quis mi lacus eu aliquam leo. Velit hac fermentum arcu at a adipiscing sed. Porttitor a blandit semper ipsum aliquam. A diam et et egestas feugiat vitae.</textarea>
-        </div> -->
-        <div id="editor">
-        </div>
-      </div>
+    </form>
 
-      <div class="col-md-4 meta-data">
-        <div class="form-group">
-          <label for="tags">Tags</label>
-          <input type="text" class="form-control" id="tags" placeholder="Campus News">
-        </div>
-        <div class="form-group">
-          <label for="journalists">Journalists</label>
-          <select class="form-control" id="journalists">
-            <option>Select Journalist</option>
-            <!-- Options can be added here -->
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="bannerImage">Banner Image</label>
-          <input type="file" class="form-control-file" id="bannerImage">
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="setAsBannerArticle">
-          <label class="form-check-label" for="setAsBannerArticle">Set as Banner Article?</label>
-        </div>
-        <div class="form-group">
-          <label for="bannerImage">In-Article Image</label>
-          <input type="file" class="form-control-file" id="bannerImage">
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  
-  <div class="btn-group">
-    <button class="btn btn-outline-primary">Preview Article Page</button>
-    <button class="btn btn-outline-secondary">Save Draft</button>
-    <button class="btn btn-primary">Publish Now</button>
-  </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
-  <script>
-    const quill = new Quill('#editor', {
-      theme: 'snow'
-    });
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script>
+        const quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+        document.querySelector('form').onsubmit = function() {
+            document.querySelector('#content').value = quill.root.innerHTML;
+        };
+    </script>
 </body>
-
 </html>
