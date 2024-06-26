@@ -14,32 +14,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Handling file uploads
     $bannerImage = $_FILES['bannerImage'];
-    $bannerImagePath = 'uploads/' . basename($bannerImage['name']);
+    $bannerImagePath = basename($bannerImage['name']);
 
     // Move uploaded file to designated directory
     if (move_uploaded_file($bannerImage['tmp_name'], $bannerImagePath)) {
-        // Insert the article
-        $sql = "INSERT INTO article (headline, subhead, content_text, if_banner, pub_date, status, category_id)
-                VALUES (?, ?, ?, ?, ?, ?, ?)";
+        // Insert the media record
+        $upload_date = date("Y-m-d H:i:s");
+        $media_type = 'banner_img';
+        $sqlMedia = "INSERT INTO media (media_filepath, media_type, upload_date) VALUES (?, ?, ?)";
+        $stmtMedia = $con->prepare($sqlMedia);
+        $stmtMedia->bind_param("sss", $bannerImagePath, $media_type, $upload_date);
 
-        $stmt = $con->prepare($sql);
-        $stmt->bind_param("ssssssi", $header, $subheader, $content, $isBannerArticle, $pub_date, $status, $category_id);
+        if ($stmtMedia->execute()) {
+            $media_id = $stmtMedia->insert_id;
 
-        if ($stmt->execute()) {
-            $article_id = $stmt->insert_id;
+            // Insert the article
+            $sql = "INSERT INTO article (headline, subhead, content_text, if_banner, pub_date, status, category_id)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-            // Insert into article_media table
-            $sqlMedia = "INSERT INTO article_media (article_id, media_filepath) VALUES (?, ?)";
-            $stmtMedia = $con->prepare($sqlMedia);
-            $stmtMedia->bind_param("is", $article_id, $bannerImagePath);
-            $stmtMedia->execute();
+            $stmt = $con->prepare($sql);
+            $stmt->bind_param("ssssssi", $header, $subheader, $content, $isBannerArticle, $pub_date, $status, $category_id);
 
-            echo "New article created successfully";
+            if ($stmt->execute()) {
+                $article_id = $stmt->insert_id;
+
+                // Insert into article_media table
+                $sqlArticleMedia = "INSERT INTO article_media (article_id, media_id) VALUES (?, ?)";
+                $stmtArticleMedia = $con->prepare($sqlArticleMedia);
+                $stmtArticleMedia->bind_param("ii", $article_id, $media_id);
+                $stmtArticleMedia->execute();
+
+                echo '<meta http-equiv="refresh" content="2;url=homepage.html">';
+                echo '<p>Post successful! Redirecting...</p>';
+                exit();
+            } else {
+                echo "Error: " . $sql . "<br>" . $con->error;
+            }
+
+            $stmt->close();
         } else {
-            echo "Error: " . $sql . "<br>" . $con->error;
+            echo "Error: " . $sqlMedia . "<br>" . $con->error;
         }
 
-        $stmt->close();
+        $stmtMedia->close();
     } else {
         echo "Failed to upload banner image.";
     }
@@ -47,4 +64,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $con->close();
 }
 ?>
- 
