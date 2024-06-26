@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Opinion Section
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    p {
+      font-size: 15px;
+      font-family: "Sitka Display", serif;
+      line-height: 1.2;
+
+    }
+
+    h2 {
+      font-size: 18px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    h5 {
+      font-size: 13px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+    }
+
+    .articles img {
+      width: 210px;
+      height: 180px;
+      margin-bottom: 20px;
+      margin-top: 0px;
+      border-radius: 12px;
+      height: 200px;
+      width: inherit;
+
+      /* box-shadow: rgba(50, 50, 93, 0.15) 0px 13px 27px -5px, rgba(0, 0, 0, 0.2) 0px 8px 16px -8px; */
+      margin-right: 30px;
+    }
+
+    nav img {
+
+      height: auto;
+      margin: 0px;
+    }
+
+    nav {
+      background-color: rgb(255, 255, 255);
+      color: #000;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .nav-link {
+      font-size: 1.2em;
+      margin-right: 10px;
+      color: #000;
+    }
+
+    .articles {
+      padding: 0px;
+      margin: 10px;
+      margin-top: 20px;
+      height: 200px;
+      min-width: 200px;
+      max-width: 800px;
+      border-radius: 12px;
+      margin-left: 2%;
+
+    }
+
+    header {
+      background-color: white;
+      color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 5px;
+      padding-right: 30px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      height: 100px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      font-family: "Didot", serif;
+      font-weight: 400;
+    }
+
+    .opinion-line {
+      color: black;
+      width: inherit;
+      text-align: start;
+      position: relative;
+      text-align: top;
+      margin-bottom: -6px;
+    }
+
+
+    header a {
+      color: #000000;
+      text-decoration: none;
+      margin-right: 1rem;
+
+    }
+
+    header nav a {
+      font-size: 1.2em;
+      margin-right: 30px;
+    }
+
+    header nav a:last-child {
+      margin-right: 0;
+    }
+
+    .boy,
+    .boys {
+      margin: 18px;
+      height: 350px;
+      max-width: 730px;
+      min-width: 310px;
+      text-align: center;
+      border-radius: 12px;
+      overflow: visible;
+    }
+
+    .boy h3 {
+      margin-top: 25%;
+      
+    }
+
+    .boys h3 {
+      margin-top: 30px;
+    }
+
+    hr {
+      width: calc(100% - 150px);
+      height: 0;
+      /* Remove default line height */
+      border-top: 1px solid #ddd;
+      /* Set your desired border style */
+      margin-bottom: 5px;
+      /* Add some margin for spacing */
+      padding: 0;
+      /* Remove default padding */
+      display: inline-block;
+      color: rgb(0, 0, 0);
+      opacity: 3;
+    }
+
+    .footer {
+      margin-top: 150px;
+      width: inherit;
+      text-align: center;
+      font-size: small;
+      color: white;
+    }
+
+
+    @media (min-width: 1400px) {
+
+      .articles {
+        margin-left: 6%;
+        padding: 0px;
+        margin: 10px;
+        margin-top: 10px;
+        height: 230px;
+        min-width: 450px;
+        max-width: 800px;
+        border-radius: 12px;
+
+      }
+    }
+
+    hr {
+      width: calc(100% - 150px);
+      height: 0;
+      /* Remove default line height */
+      border-top: 1px solid #ddd;
+      /* Set your desired border style */
+      margin-bottom: 5px;
+      /* Add some margin for spacing */
+      padding: 0;
+      /* Remove default padding */
+      display: inline-block;
+      color: rgb(0, 0, 0);
+      opacity: 3;
+    }
+@media (min-width: 1200px) and (max-width: 1500px) {
+      .articles {
+        margin-left: 10%;
+        padding: 0px;
+        margin: 10px;
+        margin-top: 10px;
+        height: 230px;
+        min-width: 450px;
+        max-width: 800px;
+        border-radius: 12px;
+
+      }
+      .articles img {
+        margin-top: 10px;
+        width: 280px;
+        height: 210px;
+
+    }
+  }
+    @media (min-width: 600px) and (max-width: 1200px) {
+      .boys {
+        height: 150px;
+        width: inherit;
+        display: inline-block;
+        align-items: center;
+      }
+
+      .articles img {
+        margin-top: 10px;
+        width: 270px;
+    height: 200px;
+      }
+
+      .boys h3 {
+        margin-top: 0px;
+      }
+
+      .boy {
+        height: 350px;
+      }
+
+      hr {
+        width: calc(100% - 150px);
+        height: 0;
+        /* Remove default line height */
+        border-top: 1px solid #ddd;
+        /* Set your desired border style */
+        margin-bottom: 12px;
+        /* Add some margin for spacing */
+        padding: 0;
+        /* Remove default padding */
+        display: inline-block;
+        color: rgb(0, 0, 0);
+        opacity: 3;
+      }
+
+      .articles {
+        margin-left: 6%;
+        padding: 0px;
+        margin: 10px;
+        margin-top: 20px;
+        height: 220px;
+        min-width: 450px;
+        max-width: 800px;
+        border-radius: 12px;
+
+      }
+    }
+
+
+    @media (min-width: 992px) and (max-width: 1200px) {
+      .articles {
+        margin-left: 12%;
+        height: 280px;
+        min-width: 450px;
+        max-width: 650px;
+        margin-top: 10px;
+      }
+
+      .articles img {
+        margin-top: 10px;
+      }
+
+      hr {
+        width: calc(80% - 150px);
+        height: 0;
+        /* Remove default line height */
+        border-top: 1px solid #ddd;
+        /* Set your desired border style */
+        margin-bottom: 15px;
+        /* Add some margin for spacing */
+        padding: 0;
+        /* Remove default padding */
+        display: inline-block;
+        color: rgb(0, 0, 0);
+        opacity: 3;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .content {
+        display: flex;
+        flex-direction: column;
+        /* Stack elements vertically */
+        align-items: center;
+        /* Center elements horizontally */
+        text-align: center;
+        /* Center text */
+        margin-bottom: 20px;
+        /* Space between image and text */
+
+      }
+
+      .articles {
+        height: 330px;
+        min-width: 450px;
+        max-width: 650px;
+      }
+
+      .opinion-line {
+        margin-bottom: 100px;
+      }
+
+      .articles img {
+        width: 280px;
+        height: 200px;
+        
+        margin-bottom: 20px;
+        /* Space between image and text */
+        border-radius: 12px;
+      }
+
+      .articles hr {
+        width: calc(80% - 150px);
+        height: 0;
+        /* Remove default line height */
+        border-top: 1px solid #ddd;
+        /* Set your desired border style */
+        margin-bottom: 7px;
+        /* Add some margin for spacing */
+        padding: 0;
+        /* Remove default padding */
+        display: inline-block;
+        color: rgb(0, 0, 0);
+        opacity: 3;
+      }
+
+      .boys {
+        height: 150px;
+        width: inherit;
+        display: inline-block;
+        align-items: center
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <h1 class="col justify-content-center align-items-start"
+          style="font-size: 30px; font-family: 'Times New Roman', Times, serif; margin-bottom: 0px;"><img
+            src="logo_no_name_Fotor.png" style="max-width: 100px"> The Searcher </h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbacde r-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb- mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Opinion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Literary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container box">
+
+    <div class="row justify-content-center " style="width:100%; padding: 0px;">
+      <div class="boys col-lg-1 col-md-12 col-sm-12" id="nig" style=" text-align:  left; padding: 24px;">
+
+        <h3 style="margin-bottom:15px; color: rgb(0, 0, 0); font-size: 30px;"> About Us </h2>
+
+          <p style="color:rgb(7, 7, 7); font-size: 17px;"> The voices of the campus journalist on relavant issues</p>
+
+
+      </div>
+      <div class="boy col-lg-11 col-md-12 col-sm-12"
+        style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('Asset\ -\ Cartoon\ Palestine.png'); background-size:cover; text-align:  left; padding: 30px;">
+        <h3 style="font-family: Montserrat, sans-serif;"></h3>
+        <h3 style=" margin-bottom:6px; color: azure; font-size: 25px;"> Kahingian ang Pagsuporta ng UP sa Kilusang Estudyanteng Nakikiisa sa mga Palestino</h3>
+        <hr class="opacity-50 mb-2" style="color:azure;">
+        <p style="color:azure; font-size: 17px;">Pagkat malaon nang sinasagot ng dahas ang pagkilos ng kabataan, kagyat na kahingian sa UP ang pagprotekta nito sa mga estudyante.</p>
+
+      </div>
+    </div>
+    <div class="col align-self-center  " style="height: 80%; ">
+      <div class="row justify-content-start" style="width:100%; ">
+        <h5
+          style="margin-left: auto; margin-right: auto; text-align: center; margin-bottom: 10px; margin-top: 40px; font-family: Poppins, sans-serif;">
+          LATEST STORIES
+          <hr class="latest"
+            style="display: inline-block; color: rgb(0, 0, 0); opacity: 1; margin-left: 10px; vertical-align: middle;">
+        </h5>
+
+
+        <div class="articles">
+          <div class="content">
+            <img src="Asset - Hearth.jpeg">
+            <div>
+              <h2> Pareho Rin Kaya ang Epekto Ko Sa Iyo?</h2>
+              <p>Sa liit ng komunidad na kinabibilangan natin, ikaw lang ang nagparamdam na mas higit pa pala ako sa mga kategoryang napapaloob sakin pagdating sa hulma ng pisikal na anyo ko.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="articles">
+          <hr class="opinion-line"
+            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; ">
+          <div class="content">
+            <img src="Asset - Pogo.jpeg">
+            <div>
+              <h2>Ending the POGO Problem</h2>
+              <p>For POGOs and their corruption to be uprooted, the legal leg from which it stands must be severed before the industry leeches itself further on the economy and Philippine politics.</p>
+            </div>
+          </div>
+        </div>
+        <div class="articles">
+          <hr class="opinion-line"
+            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top;">
+          <div class="content">
+            <img src="Asset - Supreme Court.jpeg">
+            <div>
+              <h2> Judiciary Moves to Make Red-Taggers Liable, but That May Not Be Enough
+              </h2>
+              <p>Strides from the state to shield its citizens from red-tagging are welcome, but not without getting at their roots.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="articles">
+          <hr class="opinion-line"
+            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; ">
+          <div class="content">
+            <img src="Asset - AcadValidation.jpeg">
+            <div>
+              <h2> Academic Validation</h2>
+              <p>Would another sleepless night make me a better student than my peers? Or in the end, would it just be a measure of my willingness to sacrifice my personhood in favor of petty academic distinction?</p>
+            </div>
+          </div>
+        </div>
+        <div class="articles">
+          <hr class="opinion-line"
+            style="color: black;  width: inherit; text-align: start; position:relative; text-align: top; ">
+          <div class="content">
+            <img src="Aseet - Phones.jpeg">
+            <div>
+              <h2> So Much for Phone Conversations</h2>
+              <p>Mothers raise us to know sympathy and respect. Yet they are the first to be abandoned amid the widespread attacks against all life.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="footer" style="background-color: rgb(58, 0, 0); padding: 40px; padding-left: 60px;">
+    <h1 class="col justify-content-center align-items-center"
+      style="font-size: 15px; font-family: 'Times New Roman', Times, serif;"><img src="logo_no_name.png"
+        style="max-width: 60px"> © 2023 The Searcher. All rights reserved. </h1>
+  </div>
+  </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
