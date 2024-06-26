@@ -44,7 +44,7 @@ $media_creator = $row['editor_name'];
 <body>
   <header class="py-3">
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="#">
+      <a href="homepage.html">
         <img src="media/website-images/logo.png" alt="The Searcher Logo" height="50">
       </a>
       <nav>
