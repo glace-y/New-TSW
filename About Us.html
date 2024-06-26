@@ -13,7 +13,6 @@
       font-size: 15px;
       font-family: "Sitka Display", serif;
       line-height: 1.2;
-
     }
 
     h2 {
@@ -24,12 +23,12 @@
       margin-bottom: 20px;
     }
 
-    h5 {
-      font-size: 13px;
-      font-family: "Montserrat", sans-serif;
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 3px;
+    .content h2{
+        font-size: 27px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 20px;
     }
 
     .content {
@@ -90,6 +89,13 @@
       padding-right: 30px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       height: 100px;
+    }
+    h5 {
+        font-size: 18px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 3px;
     }
 
     header h1 {
@@ -182,7 +188,7 @@
 
       }
       .boy {
-        height: 550px;
+        height: 650px;
       }
     }
 
@@ -238,7 +244,7 @@
       }
 
       .boy {
-        height: 550px;
+        height: 650px;
       }
       .boy img {
         width: 100%;
@@ -261,6 +267,7 @@
       }
 
       .articles {
+        display: flex;
         margin-left: 6%;
         padding: 0px;
         margin: 10px;
@@ -269,6 +276,7 @@
         min-width: 450px;
         max-width: 800px;
         border-radius: 12px;
+        align-items: center;
 
       }
     }
@@ -352,7 +360,7 @@
       }
 
       .boys {
-        height: 150px;
+        height: 250px;
         width: inherit;
         display: inline-block;
         align-items: center
@@ -377,19 +385,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb- mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">News</a>
+            <a class="nav-link active" aria-current="page" href="news page.html">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Opinion</a>
+            <a class="nav-link" href="opinionpage.html">Opinion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Literary</a>
+            <a class="nav-link" href="Literary page.html">Literary</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sports</a>
+            <a class="nav-link" href="sportspage.html">Sports</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" href="About Us.html">About Us</a>
 
           </li>
         </ul>
@@ -404,11 +412,13 @@
         <h3 style="margin-bottom:15px; color: rgb(0, 0, 0); font-size: 20px;"> About Us </h2>
             <h3 style="margin-bottom:15px; color: rgb(0, 0, 0); font-size: 40px;"> The Searcher </h2>
           <p style="color:rgb(7, 7, 7); font-size: 17px;"> Adhering to the Truth for the Welfare of the People</p>
+          <p> The Searcher is a student publication that aims to provide a platform for the students to express their
+            thoughts and opinions on various issues. </p>
 
 
       </div>
       <div class="boy col-lg-11 col-md-12 col-sm-12"
-        style="background-image: linear-gradient(to bottom, rgba(85, 85, 85, 0), rgba(0, 0, 0, 0.801)), url('thesearcherbg.jpg'); background-size:cover; text-align:  left; padding: 30px;">
+        style="background-image: url('thesearcherbg.jpg'); background-size:cover; text-align:  left; padding: 30px;">
         <h3 style="font-family: Montserrat, sans-serif;"></h3>
         
 
@@ -418,20 +428,31 @@
       <div class="row justify-content-start" style="width:100%; ">
         <h5
           style="margin-left: auto; margin-right: auto; text-align: center; margin-bottom: 10px; margin-top: 40px; font-family: Poppins, sans-serif;">
-          LATEST STORIES
+          
           <hr class="latest"
             style="display: inline-block; color: rgb(0, 0, 0); opacity: 1; margin-left: 10px; vertical-align: middle;">
         </h5>
 
 
         <div class="articles">
-          <div class="content">
-            <img src="Asset - Hearth.jpeg">
+          <div class="content" style = "display: flex; text-align: center; margin-left: 200px;">
+            
             <div>
-              <h2> Pareho Rin Kaya ang Epekto Ko Sa Iyo?</h2>
-              <p>Sa liit ng komunidad na kinabibilangan natin, ikaw lang ang nagparamdam na mas higit pa pala ako sa mga kategoryang napapaloob sakin pagdating sa hulma ng pisikal na anyo ko.
-              </p>
+              
+              
+                <h2> Editorial Board S.Y. 2023 - 2024</h2>
+                <p></p>
+                <h5> Editor-in-Chief: Romel Jade Reyes</h5>
+                <h5> Associate Editor: Danielle Anne Cruz</h5>
+                <h5> Managing Editor: Nica Alexandria Parcon</h5>
+                <h5> Associate Managing Editor: Nicole Gumapac </h5>
+                <h5> Circulation Manager: Maxine Gallardo</h5>
+                <h5> Business Manager: Janelle Mae Pascual</h5>
+                <h5> Assitant Circulation Manager: Patrick Tuiza</h5>
+                <h5> Opinion Editor: Janelle Mae Pascual</h5>
+                
             </div>
+            <img src="logo_no_name.png" style = "margin-left: 50px;text-align: right;">
           </div>
         </div>
 
